@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <h1>This is code demo for chapter four</h1>
+
+    <script type="text/javascript">
+        //创建变量并为其赋值 4.1.1
+        function createVariate() {
+            var person = new Object();
+            person.name = "Nicholas";
+            alert(person.name);
+        }
+        // createVaribe();//Nicholas
+
+
+
+        function reValuateVariate() {
+            var name = "Nicholas";
+            name.age = 27;
+            alert(name.age);
+
+        }
+        // reValuateVariate();// undefined
+        //reason:不能给基本类型的值添加属性，因为name的值已经是字符串了
+
+        //======================================================================================================
+        //复制变量值 4.1.2
+        function copyVariate() {
+            var num1 = 5;
+            var num2 = num1;
+            alert("num1 is:" + num1);
+            alert("num2 is:" + num2);
+        }
+        // copyVariate(); //5
+
+
+        function copyObject() {
+            var obj1 = new Object();
+            var obj2 = obj1;
+            obj1.name = "Nicholas";
+            alert(obj2.name);
+        }
+        // copyObject()//Nicholas
+        //tips:复制的是引用类型的时候，只是创造了副本，即创建了一个指针，obj1和obj2都指向的是同一个对象
+
+        //======================================================================================================
+        //传递参数 4.1.3
+
+        function addTen(num) {
+            num += 10;
+            return num;
+        }
+        // var count = 20;
+        // var result = addTen(count);
+        // alert(count); //20
+        // alert(result); //30
+
+
+        function setName(obj) {
+            obj.name = "Nicholas";
+        }
+        // var person = new Object();
+        // setName(person);
+        // alert(person.name); //Nicholas
+
+
+        function setName2(obj) {
+            obj.name = "Nicholas";
+            obj = new Object();//重新声明时，此obj是一个局部变量，因此执行完毕后，会直接销毁掉
+            obj.name = "Gerg";
+        }
+        // var person = new Object();
+        // setName2(person);
+        // alert(person.name);//Nicholas
+
+        //======================================================================================================
+        //检测类型 4.1.4
+
+        function checkType() {
+            var s = "Nicholas";
+            var b = true;
+            var i = 22;
+            var u;
+            var n = null;
+            var o = new Object();
+            var f = new Function();
+
+            alert(typeof s);// string
+            alert(typeof b);// boolean
+            alert(typeof i);// number
+            alert(typeof u);// undefined
+            alert(typeof n);// object
+            alert(typeof o);// obejct
+            alert(typeof f);// function
+
+        }
+        // checkType();
+        //tips:在检测基本类型的时候，typeof 是很好的，但是一旦遇到检测引用类型，那么它就不准确了，都会返回object类型
+
+        //======================================================================================================
+        //执行环境及作用域 4.2
+
+        // var color = "blue";
+        function changeColor() {
+            if (color === "blue") {
+                color = "red";
+            } else {
+                color = "blue";
+            }
+            alert(color)
+        }
+        // changeColor();// red
+
+
+
+        var color = "blue";
+        function changeColor2() {
+            var anthorColor = "red";
+            function swapColors() {
+                var tempColor = anthorColor;
+                anthorColor = color;
+                color = tempColor;
+            }
+            swapColors();
+            alert(color); //red
+            alert(anthorColor)//blue
+        }
+        // changeColor2();//此函数有三个执行环境：全局环境，changeColor2()环境，swapColors()环境
+
+        //======================================================================================================
+        //延长作用域链 4.2.1  with在严格语法中已经禁用，这里就跳过此demo
+
+        //没有块级作用域 4.2.2
+        function add(num1, num2) {
+            var sum = num1 + num2;
+            return sum;
+        }
+        var result = add(10, 20);
+        alert(result)//30
+
+        //tips:使用var声明的变量会自动被添加到最近的环境中，因此sum最接近的环境就是函数的局部环境.
+        //如果直接alert sum,会报错，因为全局变量中没有sum
+
+
+
+
+    </script>
+</body>
+
+
+</html>
