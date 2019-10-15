@@ -116,7 +116,7 @@
 
 
 
-        var color = "blue";
+        // var color = "blue";
         function changeColor2() {
             var anthorColor = "red";
             function swapColors() {
@@ -138,14 +138,40 @@
             var sum = num1 + num2;
             return sum;
         }
-        var result = add(10, 20);
-        alert(result)//30
+        // var result = add(10, 20);
+        // alert(result)//30
 
         //tips:使用var声明的变量会自动被添加到最近的环境中，因此sum最接近的环境就是函数的局部环境.
         //如果直接alert sum,会报错，因为全局变量中没有sum
 
 
+        function add2(num1, num2) {
+            sum = num1 + num2;
+            return sum;
+        }
+        // var result = add2(10, 20);
+        // alert(sum)//30
+        //tips:sum没有用var声明，因此会生成一个全局变量sum.
 
+
+        var color = "blue";
+        function getColor() {
+            return color;
+        }
+        // alert(getColor())//color在方法内没有找到，会继续向上层查找，因此在全局作用于中找到了color
+
+        //======================================================================================================
+        //管理内存 4.3.3
+
+        function createPerson(name) {
+            var localPerson = new Object();
+            localPerson.name = name;
+            return localPerson;
+        }
+        var globalPerson = createPerson("Nicholas");
+        //手工解除globalPerson的引用
+        globalPerson = null;
+        //tips:手动解除引用真正的作用是为了让值脱离执行环境，便于垃圾收集器的在下次运行时将它回收
 
     </script>
 </body>
