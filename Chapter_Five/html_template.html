@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <script type="text/javascript">
+
+        //5.1 Object类型
+        function displayInfo(args) {
+            var output = "";
+            if (typeof args.name == "string") {
+                output += "Name: " + args.name + "\n";
+            }
+            if (typeof args.age == "number") {
+                output += "Age: " + args.age + "\n";
+            }
+            alert(output)
+        }
+        // displayInfo({ name: "Nicholas", age: 29 }); //Name:Nicholas, Age:29
+        // displayInfo({ name: "Gerg" });//Name:Gerg
+
+
+
+        var person = { name1: "Nicholas", name2: "Nicholas" }
+        // alert(person.name1);//Nicholas
+        // alert(person["name2"])//Nicholas
+        //tips: 点表示法与方括号表示法所得到的结果是一致的，方括号表示法可以用来访问具有关键字或保留字的属性
+
+        //========================================================================================================================
+        //5.2 Array类型
+
+
+        var colors = ['red', 'blue', 'green'];
+        var names = [];
+        // alert(colors.length);//3
+        // alert(names.length);//0
+
+        // colors.length = 2;//会移除数组的最后一项
+        // alert(colors[2]);//undefined
+
+        // colors.length = 4;//新增的项会用undefined来填充
+        // alert(colors[3]); //undefined
+
+        // colors[colors.length] = "black";
+        // colors[colors.length] = "brown";
+        // alert(colors);//red, blue, green,black,brown
+        //tips:数组的最后一项的索引是数组的长度减1，而每次都在数组的长度处填充一个数据，相当于是每次都新增一个数据
+
+
+        //========================================================================================================================
+        //5.2.1 检测数组
+
+
+
+    </script>
+    <h1>This is code demo for chapter five</h1>
+    <h2>引用类型</h2>
+</body>
+
+</html>
