@@ -49,10 +49,79 @@
 
 
         //========================================================================================================================
-        //5.2.1 检测数组
+        //5.2.2 转换方法
+
+        var person1 = {
+            toLocalString: function () {
+                return "Nicholas";
+            },
+            toString: function () {
+                return "Nicholas";
+            }
+        };
+        var person2 = {
+            toLocalString: function () {
+                return "Grigorios";
+            },
+            toString: function () {
+                return "Gerg";
+            }
+        }
+        var people = [person1, person2];
+        // alert(people)
+        // alert(people.toString());
+        // alert(people.toLocalString());
 
 
 
+
+
+        var colors = ["red", "blue", "green"];
+        // alert(colors.join(","))// red,blue,green
+        // alert(colors.join("||"))//red||blue||green
+        // alert(colors.join())//red,blue,green
+        // alert(colors.join(undefined))//red,blue,green
+
+
+        //========================================================================================================================
+        //5.2.3 栈方法
+        var colors = new Array();
+        var count = colors.push("red", "green");
+        // alert(count)//2
+
+        count = colors.push("black");
+        // alert(count);//3
+        var item = colors.pop();//取最后一项
+        // alert(item)//black
+        // alert(colors.length)//2
+        //tips: pop()是取得数组的最后一项
+
+
+
+
+
+        var colors = ['red', 'blue'];
+        colors.push("brown");
+        colors[3] = 'black'
+        // alert(colors.length)//4
+
+        var item = colors.pop();
+        // alert(item)//black
+
+
+
+        //========================================================================================================================
+        //5.2.4 队列方法
+
+        var colors = new Array();
+        var count = colors.push("red", "green");
+        // alert(count);//2
+        count = colors.push("black");
+        // alert(count)//3
+        var item = colors.shift();
+        // alert(item)//red
+        // alert(colors.length);//2
+        // alert(colors)//green,black
     </script>
     <h1>This is code demo for chapter five</h1>
     <h2>引用类型</h2>
